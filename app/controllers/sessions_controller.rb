@@ -36,10 +36,18 @@ class SessionsController < ApplicationController
   end
 
   def admin_username
-    ENV.fetch("ADMIN_USERNAME", "Linc")
+    if Rails.env.production?
+      ENV.fetch("ADMIN_USERNAME")
+    else
+      ENV.fetch("ADMIN_USERNAME", "Linc")
+    end
   end
 
   def admin_password
-    ENV.fetch("ADMIN_PASSWORD", "Recruitment2026$$")
+    if Rails.env.production?
+      ENV.fetch("ADMIN_PASSWORD")
+    else
+      ENV.fetch("ADMIN_PASSWORD", "Recruitment2026$$")
+    end
   end
 end
