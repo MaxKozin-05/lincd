@@ -24,8 +24,8 @@ class SessionsController < ApplicationController
   private
 
   def valid_login?(username, password)
-    secure_compare_digest(username, admin_username) &&
-      secure_compare_digest(password, admin_password)
+    secure_compare_digest(normalize_username(username), normalize_username(admin_username)) &&
+      secure_compare_digest(normalize_secret(password), normalize_secret(admin_password))
   end
 
   def secure_compare_digest(input, expected)
@@ -33,6 +33,14 @@ class SessionsController < ApplicationController
       Digest::SHA256.hexdigest(input.to_s),
       Digest::SHA256.hexdigest(expected.to_s)
     )
+  end
+
+  def normalize_username(value)
+    normalize_secret(value).downcase
+  end
+
+  def normalize_secret(value)
+    value.to_s.strip.gsub(/\A['"]|['"]\z/, "")
   end
 
   def admin_username
