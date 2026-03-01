@@ -1,5 +1,10 @@
+if Rails.env.production?
+  puts "Skipping sample seeds in production."
+  return
+end
+
 puts "Destroying Records"
-Job.destroy
+Job.destroy_all
 
 puts "Creating Jobs"
 
