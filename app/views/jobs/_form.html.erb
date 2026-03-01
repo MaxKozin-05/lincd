@@ -1,0 +1,50 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% field_class = "mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <div>
+      <%= form.label :title, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_field :title, class: field_class %>
+    </div>
+
+    <div>
+      <%= form.label :sub_heading, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_field :sub_heading, maxlength: 100, class: field_class %>
+      <p class="mt-1 text-xs text-slate-500">Maximum 100 characters</p>
+    </div>
+
+    <div>
+      <%= form.label :category, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.select :category, [["Tier 1", "Tier 1"], ["Tier 2", "Tier 2"], ["Tier 3", "Tier 3"]], {}, class: field_class %>
+    </div>
+
+    <div>
+      <%= form.label :salary, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_field :salary, class: field_class %>
+    </div>
+
+    <div>
+      <%= form.label :benefits, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_field :benefits, class: field_class, placeholder: "Super, Vehicle, Bonus" %>
+      <p class="mt-1 text-xs text-slate-500">Separate each benefit with a comma.</p>
+    </div>
+
+    <div class="md:col-span-2">
+      <%= form.label :location, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_field :location, class: field_class %>
+    </div>
+
+    <div class="md:col-span-2">
+      <%= form.label :description, class: "block text-sm font-medium text-slate-600" %>
+      <%= form.text_area :description,
+        class: field_class,
+        rows: 8,
+        placeholder: "Enter the role description here.\nPress Enter for a new line.\nLeave a blank line to start a new paragraph." %>
+      <p class="mt-1 text-xs text-slate-500">Line breaks and paragraphs will be preserved on the published job page.</p>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <%= form.submit class: "w-full rounded-full bg-slate-900 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800" %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>New Client Enquiry</h1>
+<p><strong>Name:</strong> <%= @name %></p>
+<p><strong>Email:</strong> <%= @email %></p>
+<p><strong>Phone:</strong> <%= @phone.presence || "Not provided" %></p>
+<p><strong>Company:</strong> <%= @company.presence || "Not provided" %></p>
+<p><strong>Message:</strong></p>
+<div><%= simple_format(@message) %></div>

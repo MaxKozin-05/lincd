@@ -1,0 +1,51 @@
+<div class="relative isolate overflow-hidden bg-white text-slate-900">
+  <div class="absolute inset-0 pointer-events-none opacity-50">
+    <div class="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-slate-200 blur-[140px]"></div>
+    <div class="absolute top-1/3 right-0 h-96 w-96 rounded-full bg-slate-100 blur-[160px]"></div>
+  </div>
+
+  <div class="relative max-w-4xl mx-auto mt-16 py-16 px-6 rounded-3xl border border-slate-200 shadow-2xl shadow-slate-200/80 backdrop-blur bg-white/80">
+  <h1 class="text-3xl font-bold text-center mb-8">Apply Now</h1>
+  <p class="text-center text-gray-600 mb-8">
+    Submit your details and resume, and we’ll get in touch with you shortly.
+  </p>
+
+  <%= form_with url: submit_application_path, method: :post, local: true, html: { multipart: true }, class: "space-y-6" do |f| %>
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-slate-600">Full Name</label>
+      <%= f.text_field :name, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200", required: true %>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-slate-600">Email Address</label>
+      <%= f.email_field :email, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200", required: true %>
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-medium text-slate-600">Phone Number</label>
+      <%= f.telephone_field :phone, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+    </div>
+
+    <!-- Resume -->
+    <div>
+      <label for="resume" class="block text-sm font-medium text-slate-600">Upload Resume (optional)</label>
+      <%= f.file_field :resume, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label for="message" class="block text-sm font-medium text-slate-600">Message</label>
+      <%= f.text_area :message, rows: 4, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <%= f.submit "Submit Application",
+        class: "w-full rounded-full bg-slate-900 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2" %>
+    </div>
+  <% end %>
+</div>
+</div>

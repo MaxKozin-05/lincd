@@ -1,0 +1,60 @@
+<div class="relative isolate overflow-hidden bg-white text-slate-900">
+  <div class="absolute inset-0 pointer-events-none opacity-50">
+    <div class="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-slate-200 blur-[140px]"></div>
+    <div class="absolute top-1/3 right-0 h-96 w-96 rounded-full bg-slate-100 blur-[160px]"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-6 space-y-12">
+    <div class="space-y-4 text-center">
+      <h1 class="text-4xl font-bold text-slate-900">Contact Lincd</h1>
+      <p class="text-slate-500 max-w-3xl mx-auto">
+        Whether you’re searching for exceptional talent or ready to brief a new project, our team is ready to partner with you.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 text-sm text-slate-600">
+        <a href="tel:0422139652" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm">
+          <span>Phone:</span> 0422 139 652
+        </a>
+        <a href="mailto:lincoln@lincd.com.au" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm">
+          <span>Email:</span> lincoln@lincd.com.au
+        </a>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm">
+          Melbourne, Victoria
+        </span>
+      </div>
+    </div>
+
+    <div class="bg-white/80 rounded-3xl border border-slate-200 shadow-2xl shadow-slate-200/80 backdrop-blur p-8">
+      <h2 class="text-2xl font-bold mb-6 text-slate-900">Send Us a Message</h2>
+      <%= form_with url: contact_us_path, method: :post, local: true, class: "space-y-6" do |f| %>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-600">Full Name</label>
+            <%= f.text_field :name, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200", required: true %>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-600">Email Address</label>
+            <%= f.email_field :email, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200", required: true %>
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-slate-600">Phone Number</label>
+            <%= f.telephone_field :phone, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+          </div>
+          <div>
+            <label for="company" class="block text-sm font-medium text-slate-600">Company (optional)</label>
+            <%= f.text_field :company, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-slate-600">Message</label>
+          <%= f.text_area :message, rows: 4, class: "mt-2 block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200", required: true %>
+        </div>
+
+        <div>
+          <%= f.submit "Send Message",
+            class: "w-full rounded-full bg-slate-900 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

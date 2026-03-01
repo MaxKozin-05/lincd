@@ -1,0 +1,78 @@
+<div class="relative isolate overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-20 text-white">
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-emerald-500 blur-3xl"></div>
+    <div class="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-sky-500 blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-0 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="space-y-4">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Current Openings</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-white">Roles Shaping Building Industry in Australia</h1>
+        <p class="text-slate-300 max-w-2xl">
+          Explore curated opportunities across executive leadership, project delivery, engineering, and support disciplines.
+        </p>
+      </div>
+      <% if logged_in? %>
+        <%= link_to "Post a Role", new_job_path,
+          class: "inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-black/40 backdrop-blur hover:bg-white/20 transition" %>
+      <% end %>
+    </div>
+
+    <div class="rounded-3xl border border-white/15 bg-white/10 backdrop-blur p-6 shadow-2xl shadow-black/30">
+      <%= form_with url: jobs_path, method: :get, local: true, class: "flex flex-col md:flex-row gap-4" do %>
+        <div class="flex-1">
+          <label for="search" class="sr-only">Search by title</label>
+          <%= text_field_tag :search, params[:search],
+            placeholder: "Search by title (e.g., Project Manager)",
+            class: "w-full rounded-2xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/40" %>
+        </div>
+        <%= submit_tag "Search",
+          class: "rounded-2xl bg-white text-slate-900 px-6 py-3 font-semibold shadow-lg shadow-black/20 transition hover:bg-slate-100" %>
+      <% end %>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <% @jobs.each do |job| %>
+        <div class="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/15">
+          <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-slate-300">
+            <span><%= job.category.presence || "General" %></span>
+            <span><%= job.location.presence || "Melbourne" %></span>
+          </div>
+          <h3 class="mt-4 text-2xl font-semibold text-white"><%= job.title %></h3>
+          <% if job.sub_heading.present? %>
+            <p class="mt-2 text-slate-200"><%= job.sub_heading %></p>
+          <% end %>
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300">
+            <% if job.salary.present? %>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-3.333 0-5 1.333-5 4s1.667 4 5 4 5-1.333 5-4-1.667-4-5-4zm0-4v4m0 8v4" />
+                </svg>
+                <%= number_to_currency(job.salary, precision: 0) %>
+              </span>
+            <% end %>
+            <% if job.location.present? %>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 11a3 3 0 100-6 3 3 0 000 6zm0 0c-4 0-6 2-6 4v1h12v-1c0-2-2-4-6-4z" />
+                </svg>
+                <%= job.location %>
+              </span>
+            <% end %>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <%= link_to "View full details", job_path(job),
+              class: "inline-flex items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg transition hover:bg-slate-100" %>
+            <% if logged_in? %>
+              <%= link_to "Edit", edit_job_path(job),
+                class: "inline-flex items-center justify-center rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10" %>
+              <%= link_to "Delete", job_path(job), method: :delete, data: { confirm: "Are you sure?" },
+                class: "inline-flex items-center justify-center rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-rose-200 transition hover:bg-rose-500/10" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

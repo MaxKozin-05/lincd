@@ -1,0 +1,75 @@
+<div class="relative isolate overflow-hidden bg-white py-20 text-slate-900">
+  <div class="absolute inset-0 pointer-events-none opacity-50">
+    <div class="absolute -top-10 -left-16 h-64 w-64 rounded-full bg-slate-200 blur-[140px]"></div>
+    <div class="absolute top-1/3 right-0 h-96 w-96 rounded-full bg-slate-100 blur-[160px]"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-0 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="space-y-4">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Current Openings</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Roles Shaping the Building Industry</h1>
+        <p class="text-slate-500 max-w-2xl">
+          Explore curated opportunities across executive leadership, project delivery, engineering, and commercial support disciplines.
+        </p>
+      </div>
+      <% if logged_in? %>
+        <%= link_to "Post a Role", new_job_path,
+          class: "inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-slate-200/80 transition hover:bg-slate-50" %>
+      <% end %>
+    </div>
+
+    <div class="rounded-3xl border border-white/60 bg-white/80 backdrop-blur p-6 shadow-2xl shadow-slate-200/70">
+      <%= form_with url: jobs_path, method: :get, local: true, class: "flex flex-col md:flex-row gap-4" do %>
+        <div class="flex-1">
+          <label for="search" class="sr-only">Search by title</label>
+          <%= text_field_tag :search, params[:search],
+            placeholder: "Search by title (e.g., Project Manager)",
+            class: "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" %>
+        </div>
+        <%= submit_tag "Search",
+          class: "rounded-2xl bg-slate-900 text-white px-6 py-3 font-semibold shadow-lg shadow-slate-900/20 transition hover:bg-slate-800" %>
+      <% end %>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <% @jobs.each do |job| %>
+        <div class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-6 backdrop-blur shadow-2xl shadow-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:bg-white">
+          <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-slate-400">
+            <span><%= job.category.presence || "General" %></span>
+            <span><%= job.location.presence || "Melbourne" %></span>
+          </div>
+          <h3 class="mt-4 text-2xl font-semibold text-slate-900"><%= job.title %></h3>
+          <% if job.sub_heading.present? %>
+            <p class="mt-2 text-slate-500"><%= job.sub_heading %></p>
+          <% end %>
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
+            <% if job.salary.present? %>
+              <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-3.333 0-5 1.333-5 4s1.667 4 5 4 5-1.333 5-4-1.667-4-5-4zm0-4v4m0 8v4" />
+                </svg>
+                <%= number_to_currency(job.salary, precision: 0) %>
+              </span>
+            <% end %>
+            <% job.benefit_list.first(3).each do |benefit| %>
+              <span class="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-3 py-1">
+                <%= benefit %>
+              </span>
+            <% end %>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <%= link_to "View full details", job_path(job),
+              class: "inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-800" %>
+            <% if logged_in? %>
+              <%= link_to "Edit", edit_job_path(job),
+                class: "inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50" %>
+              <%= link_to "Delete", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "inline-flex items-center justify-center rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-500 transition hover:bg-rose-50" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

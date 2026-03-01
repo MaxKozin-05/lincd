@@ -1,0 +1,511 @@
+<div class="relative w-full top-0 m-0 h-screen overflow-hidden" data-controller="hero">
+  <!-- Image Layer (Full Page) -->
+  <div class="absolute inset-0 h-full w-full overflow-hidden transition-transform duration-1000 ease-out"
+       data-hero-target="imageWrap">
+    <img
+      src="http://images.pexels.com/photos/1437493/pexels-photo-1437493.jpeg"
+      alt="Construction site"
+      class="object-cover w-full h-full"
+      data-hero-target="image"
+    />
+  </div>
+
+  <!-- Text Layer -->
+  <div class="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-10 transition-all duration-1000 delay-1000"
+       data-hero-target="textWrap">
+    <div class="text-center text-white p-8">
+      <h1 class="text-5xl font-bold mb-4" data-hero-target="textItem">
+        <span class="group inline-block">
+          <%= image_tag "LIncd_whitelogo.png", alt: "Lincd", class: "h-[3rem] w-auto mx-auto block group-hover:hidden" %>
+          <%= image_tag "LIncd_whitelogo_bluedot.png", alt: "Lincd", class: "h-[3rem] w-auto mx-auto hidden group-hover:block" %>
+        </span>
+      </h1>
+      <p class="text-xl" data-hero-target="textItem">
+        Recruitment with a difference.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="relative isolate overflow-hidden bg-white py-20 text-slate-900">
+  <div class="absolute inset-0 pointer-events-none opacity-50">
+    <div class="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-slate-200 blur-[140px]"></div>
+    <div class="absolute top-1/3 right-0 h-96 w-96 rounded-full bg-slate-100 blur-[160px]"></div>
+  </div>
+  <div class="relative space-y-16">
+
+<div class="w-full h-full py-16">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-2xl text-gray-800 font-light leading-relaxed">
+      We connect commercial builders with the talent that keeps Melbourne and Queensland projects moving.
+    </p>
+  </div>
+</div>
+
+
+<div class="w-full bg-gray-100 py-16">
+  <div class="max-w-6xl py-6 mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+    <!-- Text Content -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Recruitment Services</h2>
+      <div class="text-gray-600 mb-6 space-y-4 leading-relaxed">
+        <p>
+          Based in the heart of Melbourne, Lincd is a boutique recruitment specialist dedicated exclusively to the commercial construction industry. We understand that the foundations of a great city are laid by exceptional people.
+        </p>
+        <p>
+          Our mission is simple: to connect leading businesses with outstanding talent, fostering partnerships that build not just structures, but legacies.
+        </p>
+        <p>
+          We are not a large, impersonal agency. We are your dedicated partner. Our deep, nuanced understanding of Melbourne’s commercial construction landscape sets us apart. We speak your language and are invested in your success.
+        </p>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="md:w-1/2">
+      <%= image_tag "construction-professional.webp", alt: "White-collar professional", class: "rounded-lg shadow-lg object-cover w-full h-full" %>
+    </div>
+  </div>
+</div>
+
+<div class="w-full max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12">Positions We Cover</h2>
+  <div class="flex flex-col md:flex-row gap-4 h-auto md:h-80 mb-16">
+
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Executive
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1762341104634-998bbee0ccba?auto=format&w=1600&q=80"
+             alt="Executive leadership"
+             class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">General Managers</span>
+            <span class="block">Construction Managers</span>
+            <span class="block">Chief Financial Officers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Project Management
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg">
+        <img src="https://plus.unsplash.com/premium_photo-1723579382547-f32fb587d8c0?q=80&w=2080&auto=format&fit=crop"
+             alt="Project management"
+             class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">Project Directors</span>
+            <span class="block">Project Managers</span>
+            <span class="block">Site Managers</span>
+            <span class="block">Contracts Administrators</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Pre-Construction
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg">
+        <%= image_tag "preconstruction.jpg", alt: "Pre-construction specialists",
+              class: "absolute inset-0 w-full h-full object-cover opacity-80" %>
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">Estimators</span>
+            <span class="block">Quantity Surveyors</span>
+            <span class="block">Design Managers</span>
+            <span class="block">BIM Coordinators</span>
+            <span class="block">Bid Managers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-4 h-auto md:h-80">
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Engineering
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop"
+             alt="Engineering specialists"
+             class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">Civil Engineers</span>
+            <span class="block">Structural Engineers</span>
+            <span class="block">Facade Engineers</span>
+            <span class="block">Services Engineers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Site Supervision & Trades
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop"
+             alt="Site supervision and trades"
+             class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">Site Managers</span>
+            <span class="block">Forepersons</span>
+            <span class="block">Site Engineers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 group cursor-pointer transition-all duration-500 ease-in-out hover:flex-[2]">
+      <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
+        Commercial & Support Roles
+      </h3>
+
+      <div class="relative w-full h-60 md:h-full rounded-lg overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&h=600&fit=crop"
+             alt="Commercial and support teams"
+             class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div class="text-white text-center text-base sm:text-lg leading-relaxed font-semibold space-y-1 tracking-wide">
+            <span class="block">Contract Administrators</span>
+            <span class="block">Safety Officers</span>
+            <span class="block">Project Planners</span>
+            <span class="block">Office & Operations Managers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-full bg-gray-100 py-20">
+  <div class="max-w-6xl mx-auto px-6 lg:px-0">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12">Principles Guiding Every Placement</h2>
+      </div>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 mt-12">
+      <div class="group rounded-3xl border border-slate-100 bg-white/70 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold text-slate-900">Innovation</h3>
+        </div>
+        <p class="text-slate-600 leading-relaxed">
+          Championing smarter, more efficient building futures.
+        </p>
+      </div>
+
+      <div class="group rounded-3xl border border-slate-100 bg-white/70 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold text-slate-900">Sustainability</h3>
+        </div>
+        <p class="text-slate-600 leading-relaxed">
+          Partnering with builders who shape a responsible environment.
+        </p>
+      </div>
+
+      <div class="group rounded-3xl border border-slate-100 bg-white/70 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold text-slate-900">Inclusivity</h3>
+        </div>
+        <p class="text-slate-600 leading-relaxed">
+          Building diverse, dynamic, and high-performing teams.
+        </p>
+      </div>
+
+      <div class="group rounded-3xl border border-slate-100 bg-white/70 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold text-slate-900">Ethics</h3>
+        </div>
+        <p class="text-slate-600 leading-relaxed">
+          Operating with integrity, transparency, and unwavering professionalism.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="w-full max-w-6xl mx-auto px-4 py-20">
+  <h2 class="text-3xl font-bold text-center mb-12">Who Are You?</h2>
+
+<section id="splitHero" class="relative h-[80vh] md:h-screen overflow-hidden mt-12">
+  <style>
+    /* smooth opacity/visibility transitions for cards & ctas */
+    .card-shell { transition: opacity 0.5s ease, visibility 0.5s ease; }
+    .card-hidden { opacity: 0; visibility: hidden; }
+    .cta { transition: opacity 0.4s ease, transform 0.4s ease; }
+    .cta-hidden { opacity: 0; pointer-events: none; transform: translate(-50%, 6px); }
+    .cta-visible { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+
+    /* Glass-style reveal surface used when a side expands */
+    .panel-reveal {
+      position: absolute;
+      inset: 0.75rem;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 0.5s ease, transform 0.6s ease;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      pointer-events: none;
+    }
+
+    .panel-reveal.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .panel-reveal img {
+      transform: scale(1.08);
+      filter: saturate(0.92) contrast(1.03);
+      transition: transform 0.7s ease, filter 0.7s ease;
+    }
+
+    .panel-reveal.active img {
+      transform: scale(1.02);
+      filter: saturate(1) contrast(1.05);
+    }
+
+    .panel-sheen {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.18) 0%,
+        rgba(255,255,255,0.05) 35%,
+        rgba(15,23,42,0.20) 100%
+      );
+      pointer-events: none;
+    }
+
+    .panel-frame {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- Grid wrapper -->
+  <div id="splitGrid"
+       class="grid h-full -mt-6 transition-[grid-template-columns] duration-500 ease-out"
+       style="grid-template-columns: 1fr 1fr;">
+
+    <!-- LEFT PANEL (Candidates) -->
+    <div id="panel-left" class="relative overflow-hidden">
+      <div id="reveal-left" class="panel-reveal">
+        <%= image_tag "office_worker.jpg", alt: "Office Worker",
+             id: "bg-left",
+             class: "absolute inset-0 w-full h-full object-cover object-top opacity-0 pointer-events-none will-change-opacity" %>
+        <div id="shade-left" class="absolute inset-0 bg-slate-900/20 pointer-events-none opacity-0 transition-opacity duration-500"></div>
+        <div class="panel-sheen"></div>
+        <div class="panel-frame"></div>
+      </div>
+
+      <!-- Card -->
+      <article id="card-left"
+               class="absolute inset-0 flex items-center justify-center p-4 md:p-6">
+        <div class="card-shell max-w-2xl w-[90%] md:w-full bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-slate-300/40 border border-white/70 overflow-hidden">
+          <%= image_tag "office_worker.jpg", alt: "Office Worker", class: "w-full h-72 md:h-80 object-cover object-top" %>
+          <div class="p-6 md:p-8">
+            <h3 class="text-3xl md:text-4xl font-bold mb-3">Candidates</h3>
+            <p class="text-gray-600 text-lg md:text-xl">Find tailored roles and career support.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CTA (shows when left expanded) -->
+      <a id="cta-left"
+        href="<%= jobs_path %>"
+        class="cta cta-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/95 backdrop-blur border border-white/60 shadow-lg text-gray-900 font-semibold">
+        Click here to find out more
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+
+      <!-- Full-panel click target -->
+      <button data-side="left" class="absolute inset-0 z-10 focus:outline-none" aria-pressed="false" aria-label="Expand candidate stories"></button>
+    </div>
+
+    <!-- RIGHT PANEL (Clients) -->
+    <div id="panel-right" class="relative overflow-hidden">
+      <div id="reveal-right" class="panel-reveal">
+        <%= image_tag "construction_background.jpg", alt: "Construction background",
+             id: "bg-right",
+             class: "absolute inset-0 w-full h-full object-cover opacity-0 pointer-events-none will-change-opacity" %>
+        <div id="shade-right" class="absolute inset-0 bg-slate-900/20 pointer-events-none opacity-0 transition-opacity duration-500"></div>
+        <div class="panel-sheen"></div>
+        <div class="panel-frame"></div>
+      </div>
+
+      <!-- Card -->
+      <article id="card-right"
+               class="absolute inset-0 flex items-center justify-center p-4 md:p-6">
+        <div class="card-shell max-w-2xl w-[90%] md:w-full bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-slate-300/40 border border-white/70 overflow-hidden">
+          <%= image_tag "construction_background.jpg", alt: "Construction background", class: "w-full h-72 md:h-80 object-cover" %>
+          <div class="p-6 md:p-8">
+            <h3 class="text-3xl md:text-4xl font-bold mb-3">Clients</h3>
+            <p class="text-gray-600 text-lg md:text-xl">Hire vetted talent, fast.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CTA (shows when right expanded) -->
+      <a id="cta-right"
+        href="/clients"
+        class="cta cta-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/95 backdrop-blur border border-white/60 shadow-lg text-gray-900 font-semibold">
+        Click here to find out more
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+
+      <!-- Full-panel click target -->
+      <button data-side="right" class="absolute inset-0 z-10 focus:outline-none" aria-pressed="false" aria-label="Expand clients"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+(() => {
+  const grid = document.getElementById('splitGrid');
+
+  const els = {
+    left: {
+      panel: document.getElementById('panel-left'),
+      reveal: document.getElementById('reveal-left'),
+      bg:    document.getElementById('bg-left'),
+      shade: document.getElementById('shade-left'),
+      card:  document.getElementById('card-left'),
+      btn:   grid.querySelector('button[data-side="left"]'),
+      shell: document.querySelector('#card-left .card-shell'),
+      cta:   document.getElementById('cta-left')
+    },
+    right: {
+      panel: document.getElementById('panel-right'),
+      reveal: document.getElementById('reveal-right'),
+      bg:    document.getElementById('bg-right'),
+      shade: document.getElementById('shade-right'),
+      card:  document.getElementById('card-right'),
+      btn:   grid.querySelector('button[data-side="right"]'),
+      shell: document.querySelector('#card-right .card-shell'),
+      cta:   document.getElementById('cta-right')
+    }
+  };
+
+  let active = null; // 'left' | 'right' | null
+
+  function setPressed(side, val) {
+    els[side].btn.setAttribute('aria-pressed', val ? 'true' : 'false');
+  }
+
+  function hideBothCards() {
+    els.left.shell.classList.add('card-hidden');
+    els.right.shell.classList.add('card-hidden');
+  }
+
+  function showBothCards() {
+    els.left.shell.classList.remove('card-hidden');
+    els.right.shell.classList.remove('card-hidden');
+  }
+
+  function hideBothCTAs() {
+    els.left.cta.classList.remove('cta-visible');
+    els.left.cta.classList.add('cta-hidden');
+    els.right.cta.classList.remove('cta-visible');
+    els.right.cta.classList.add('cta-hidden');
+  }
+
+  function showCTA(side) {
+    const other = side === 'left' ? 'right' : 'left';
+    els[side].cta.classList.remove('cta-hidden');
+    els[side].cta.classList.add('cta-visible');
+    els[other].cta.classList.remove('cta-visible');
+    els[other].cta.classList.add('cta-hidden');
+  }
+
+  function showSide(side) {
+    const other = side === 'left' ? 'right' : 'left';
+    active = side;
+
+    // Smooth 2/3 : 1/3 split
+    grid.style.gridTemplateColumns = side === 'left' ? '1.25fr 1fr' : '1fr 1.25fr';
+
+    // Crossfade backgrounds
+    els[side].reveal.classList.add('active');
+    els[other].reveal.classList.remove('active');
+    els[side].bg.style.opacity     = '1';
+    els[side].shade.style.opacity  = '1';
+    els[other].bg.style.opacity    = '0';
+    els[other].shade.style.opacity = '0';
+
+    // Fade out both cards and show CTA for active side
+    hideBothCards();
+    showCTA(side);
+
+    setPressed(side, true);
+    setPressed(other, false);
+  }
+
+  function resetAll() {
+    active = null;
+    grid.style.gridTemplateColumns = '1fr 1fr';
+
+    els.left.reveal.classList.remove('active');
+    els.right.reveal.classList.remove('active');
+    els.left.bg.style.opacity    = '0';
+    els.left.shade.style.opacity = '0';
+    els.right.bg.style.opacity   = '0';
+    els.right.shade.style.opacity= '0';
+
+    // Fade cards back in and hide CTAs
+    showBothCards();
+    hideBothCTAs();
+
+    setPressed('left', false);
+    setPressed('right', false);
+  }
+
+  // Clicking a side toggles between expanded and reset
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-side]');
+    if (!btn) return;
+    const side = btn.getAttribute('data-side');
+    if (active === side) {
+      resetAll();
+    } else {
+      showSide(side);
+    }
+  });
+
+  // Start neutral
+  resetAll();
+})();
+</script>
+</div>ç
+</div>
+</div>

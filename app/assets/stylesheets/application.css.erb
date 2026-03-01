@@ -1,0 +1,55 @@
+/*
+ *= require_tree .
+ *= require_self
+*/
+
+@font-face {
+  font-family: "Avenir Black";
+  src: url("<%= asset_path 'avenir-black.ttf' %>") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next Condensed";
+  src: url("<%= asset_path 'avenir-next-condensed-regular.otf' %>") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-title {
+  font-family: "Avenir Black", "Arial Black", sans-serif;
+  font-weight: 900;
+}
+
+.font-body {
+  font-family: "Avenir Next Condensed", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Avenir Next Condensed", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Avenir Black", "Arial Black", sans-serif;
+  font-weight: 900;
+}
+
+
+
+.container1 {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.site-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
