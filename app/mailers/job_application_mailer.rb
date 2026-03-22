@@ -9,8 +9,8 @@ class JobApplicationMailer < ApplicationMailer
     attachments[params[:resume].original_filename] = params[:resume].read if params[:resume].present?
 
     mail(
-      to: ENV.fetch("LINCD_CONTACT_EMAIL", "contact@lincd.com"),
-      from: @email,
+      to: contact_recipient,
+      reply_to: @email.presence,
       subject: "Job Application for #{@job.title}"
     )
   end

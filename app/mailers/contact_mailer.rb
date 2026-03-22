@@ -7,8 +7,8 @@ class ContactMailer < ApplicationMailer
     @message = params[:message]
 
     mail(
-      to: ENV.fetch("LINCD_CONTACT_EMAIL", "contact@lincd.com"),
-      from: @email,
+      to: contact_recipient,
+      reply_to: @email.presence,
       subject: "Client Enquiry from #{@name}"
     )
   end
