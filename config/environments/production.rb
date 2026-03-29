@@ -75,16 +75,23 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV["APP_HOST"], protocol: "https" } if ENV["APP_HOST"].present?
 
   if ENV["SMTP_ADDRESS"].present?
+    smtp_port = ENV.fetch("SMTP_PORT", 587).to_i
+    smtp_ssl = ENV.fetch("SMTP_SSL", "false") == "true"
+    smtp_starttls_auto = ENV.fetch("SMTP_ENABLE_STARTTLS_AUTO", smtp_ssl ? "false" : "true") == "true"
+
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.smtp_settings = {
       address: ENV["SMTP_ADDRESS"],
-      port: ENV.fetch("SMTP_PORT", 587).to_i,
+      port: smtp_port,
       domain: ENV["SMTP_DOMAIN"],
       user_name: ENV["SMTP_USERNAME"],
       password: ENV["SMTP_PASSWORD"],
       authentication: ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym,
-      enable_starttls_auto: ENV.fetch("SMTP_ENABLE_STARTTLS_AUTO", "true") == "true"
+      enable_starttls_auto: smtp_starttls_auto,
+      ssl: smtp_ssl,
+      open_timeout: ENV.fetch("SMTP_OPEN_TIMEOUT", 5).to_i,
+      read_timeout: ENV.fetch("SMTP_READ_TIMEOUT", 10).to_i
     }.compact
   end
 
